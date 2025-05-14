@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="landing">
+    <h1>Create your professional resume in minutes</h1>
+    <p>Polished, ATS-ready, and designed to impress recruiters with ease.</p>
+    <button id="startBtn">Start Building</button>
+  </section>
+
+  <form id="resumeForm" style="display: none;">
+    <h2>Personal Info</h2>
+    <input type="text" id="fullName" placeholder="Full Name" required />
+    <input type="text" id="title" placeholder="Professional Title" required />
+    <textarea id="profile" placeholder="Profile Summary" required></textarea>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="phone" placeholder="Phone" required />
+    <input type="text" id="address" placeholder="Address" required />
+    <input type="text" id="guardian" placeholder="Guardian Name" />
+    <input type="file" id="profileImage" accept="image/*" />
+
+    <h2>Skills & Languages</h2>
+    <input type="text" id="skills" placeholder="Skills (comma-separated)" required />
+    <input type="text" id="languages" placeholder="Languages (comma-separated)" required />
+    <input type="text" id="hobbies" placeholder="Hobbies (comma-separated)" />
+
+    <h2>Experience</h2>
+    <div id="experienceSection"></div>
+    <button type="button" onclick="addExperience()">+ Add Experience</button>
+
+    <h2>Education</h2>
+    <div id="educationSection"></div>
+    <button type="button" onclick="addEducation()">+ Add Education</button>
+
+    <h2>Projects</h2>
+    <div id="projectSection"></div>
+    <button type="button" onclick="addProject()">+ Add Project</button>
+
+    <br><br>
+    <button type="submit">Generate Resume</button>
+    <button type="button" id="downloadBtn">Download as PDF</button>
+  </form>
+
+  <div class="resume-output" id="resumeOutput"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
